@@ -1,15 +1,15 @@
-enum ROLES {
+export enum ROLES {
     ADMIN = 'admin',
     SELLER = 'seller',
     CUSTOMER = 'customer'
 }
 
-type User = {
+export type User = {
     username: string;
     role: ROLES;
 }
 
-const fredUser: User = {
+export const fredUser: User = {
     username: 'Sh4rkD',
     role: ROLES.ADMIN
 }
