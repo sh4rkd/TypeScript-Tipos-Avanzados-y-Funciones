@@ -21,7 +21,8 @@ export const addProduct = (product: CreateProductDTO): Product => {
     return newProduct;
 };
 
-export const updateProduct = (id: string | number, product: UpdateProductDTO): Product => {
+//tipado por indice, interface[indice] devuelve el tipo de dato que es ese indice Product["id"] es string | number
+export const updateProduct = (id: Product["id"], product: UpdateProductDTO): Product => {
     const index = products.findIndex(p => p.id === id);
     const prevData = products[index];
     //este update es solo en memoria, cuando sea con db no se utilizara.
