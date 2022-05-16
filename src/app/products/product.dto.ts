@@ -14,3 +14,9 @@ export interface UpdateProductDTO extends Partial<CreateProductDTO>{
 
 //required todo obligatorio
 export type contrariodePartial = Required<Product>;
+
+export interface FindProductDTO extends Readonly<Partial<Product>>{
+}
+
+//Readonly todo solo lectura
+export type sololeer = Readonly<Product>;
