@@ -34,5 +34,9 @@ export const updateProduct = (id: Product["id"], product: UpdateProductDTO): Pro
 }
 
 export const findProduct = (dto: FindProductDTO):Product[] =>  {
+    //con el readonlyarray ya no deja agregar o quitar elementos
+    //dto.tags = ["red", "blue"];
+    //dto.tags?.push("red");
+    //dto.tags?.pop();
     return products;
 }
