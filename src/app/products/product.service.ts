@@ -1,6 +1,6 @@
 import faker from '@faker-js/faker';
 import { Product } from './product.model';
-import { CreateProductDTO } from './product.dto';
+import { CreateProductDTO, UpdateProductDTO } from './product.dto';
 
 export const products: Product[] = [];
 
@@ -21,7 +21,13 @@ export const addProduct = (product: CreateProductDTO): Product => {
     return newProduct;
 };
 
-export const updateProduct = (id: string | number, product: Product): void => {
+export const updateProduct = (id: string | number, product: UpdateProductDTO): Product => {
     const index = products.findIndex(p => p.id === id);
-    products[index] = product;
+    const prevData = products[index];
+    //este update es solo en memoria, cuando sea con db no se utilizara.
+    products[index] = {
+        ...prevData,
+        ...product,
+    };
+    return products[index];
 }
